@@ -1,5 +1,5 @@
 {
-  "id": "Titti_SpringBoot"
+  "id": "Titti_SpringBoot",
   "port": 8080,
   "memory": 2048,
   "cpu": 2
