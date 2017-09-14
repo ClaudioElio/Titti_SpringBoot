@@ -26,6 +26,7 @@ repositories {
 }
 
 dependencies {
+  clean
   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 }
 
