@@ -12,6 +12,7 @@ public class WeDeployController2 {
 
     }
 
+    @RequestMapping("/hello-2")
     public ModelAndView hello() {
         return new ModelAndView("layout");
     }
