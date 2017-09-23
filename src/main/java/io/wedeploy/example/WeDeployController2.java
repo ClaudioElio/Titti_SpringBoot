@@ -6,9 +6,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/hello-2")
-public class WeDeployController {
+public class WeDeployController2 {
 
-    public WeDeployController() {
+    public WeDeployController2() {
 
     }
 
