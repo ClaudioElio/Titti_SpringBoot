@@ -15,8 +15,10 @@ buildscript {
 apply plugin: 'java'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-task run(dependsOn: ':bootRun') << {
+task run(dependsOn: ':bootRun') {
+  doLast {
     println 'Boot'
+  }
 }
 
 repositories {
@@ -27,6 +29,8 @@ repositories {
 
 dependencies {
   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-actuator")
 }
 
 task wrapper(type: Wrapper) {
