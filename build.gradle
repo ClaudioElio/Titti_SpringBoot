@@ -29,12 +29,12 @@ repositories {
 }
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-  compile("org.springframework.boot:spring-boot-starter-parent")
-  compile("org.springframework.boot:spring-boot-starter-web")
-  compile("org.springframework.boot:spring-boot-starter-actuator")
-  compile("org.springframework.boot:spring-boot-starter-security")
-  compile("org.springframework.security.oauth:spring-security-oauth2")
+  compile("org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE")
+//  compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+//  compile("org.springframework.boot:spring-boot-starter-parent")
+//  compile("org.springframework.boot:spring-boot-starter-actuator")
+//  compile("org.springframework.boot:spring-boot-starter-security")
+//  compile("org.springframework.security.oauth:spring-security-oauth2")
 }
 
 task wrapper(type: Wrapper) {
