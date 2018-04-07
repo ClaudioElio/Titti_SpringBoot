@@ -1,5 +1,6 @@
 group 'io.wedeploy.example'
 version '1.0-SNAPSHOT'
+org.gradle.warning.mode=all
 
 buildscript {
   repositories {
@@ -14,7 +15,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+apply plugin: 'org.springframework.boot.gradle.plugin.SpringBootPlugin'
 
 task run(dependsOn: ':bootRun') {
   doLast {
@@ -31,7 +32,6 @@ repositories {
 dependencies {
   compile("org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE")
   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-//  compile("org.springframework.boot:spring-boot-starter-parent")
   compile("org.springframework.boot:spring-boot-starter-actuator")
   compile("org.springframework.boot:spring-boot-starter-security")
   compile("org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE")
