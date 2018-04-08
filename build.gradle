@@ -7,20 +7,20 @@ buildscript {
     mavenCentral()
     maven { url "http://repo.spring.io/release" }
   }
-//  dependencies {
-//    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
-//  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+  }
 }
 
 apply plugin: 'java'
 //apply plugin: 'io.spring.dependency-management'
-//apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-//task run(dependsOn: ':bootRun') {
-//  doLast {
-//    println 'Boot'
-//  }
-//}
+task run(dependsOn: ':bootRun') {
+  doLast {
+    println 'Boot'
+  }
+}
 
 repositories {
   mavenLocal()
