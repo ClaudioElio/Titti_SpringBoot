@@ -2,14 +2,21 @@ group 'io.wedeploy.example'
 version '1.0-SNAPSHOT'
 
 buildscript {
+
+    ext {
+        springBootVersion = '2.0.1.RELEASE'
+    }
+
   repositories {
     mavenLocal()
     mavenCentral()
     maven { url "http://repo.spring.io/release" }
   }
+  
   dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
   }
+
 }
 
 apply plugin: 'java'
@@ -29,10 +36,10 @@ repositories {
 }
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE")
-  compile("org.springframework.boot:spring-boot-starter-thymeleaf:2.0.1.RELEASE")
-  compile("org.springframework.boot:spring-boot-starter-actuator:2.0.1.RELEASE")
-  compile("org.springframework.boot:spring-boot-starter-security:2.0.1.RELEASE")
+  compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
   compile("org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE")
   compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
 }
