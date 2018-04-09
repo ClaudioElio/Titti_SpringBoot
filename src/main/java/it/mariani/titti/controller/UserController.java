@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/ctrl-user")
 public class UserController {
 
-    public TittiController2() {
+    public UserController() {
 
     }
 
