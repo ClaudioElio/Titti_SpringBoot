@@ -13,7 +13,7 @@ public class UserController {
 
     }
 
-    @RequestMapping("/me")
+    @RequestMapping(value="/me")
     public Principal user(Principal principal) {
         return principal;
     }
