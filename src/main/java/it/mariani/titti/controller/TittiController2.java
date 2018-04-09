@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/hello-2")
+@RequestMapping("/ctrl-2")
 public class TittiController2 {
 
     public TittiController2() {
