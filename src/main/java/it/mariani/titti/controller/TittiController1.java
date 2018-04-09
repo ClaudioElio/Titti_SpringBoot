@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 
 @EnableOAuth2Sso
 @Controller
-@RequestMapping("/hello-1")
+@RequestMapping("/ctrl-1")
 public class TittiController1 {
 
     public TittiController1() {
