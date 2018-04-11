@@ -34,11 +34,14 @@ checkstyleMain {
 
 compileJava {
   options.deprecation = true
+  doLast {
+    println 'CM -- compileJava'
+  }
 }
 
 task run(dependsOn: ':bootRun') {
   doLast {
-    println 'Boot'
+    println 'CM -- Boot'
   }
 }
 
