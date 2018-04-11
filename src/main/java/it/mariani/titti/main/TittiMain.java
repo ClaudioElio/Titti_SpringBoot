@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@SpringBootApplication(scanBasePackages={"it.mariani.titti.controller"})
+@SpringBootApplication(scanBasePackages = {"it.mariani.titti.controller"})
 public class TittiMain {
 
 	public static void main(String[] args) {
