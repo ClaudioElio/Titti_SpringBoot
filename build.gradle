@@ -24,20 +24,20 @@ apply plugin: 'java'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 apply plugin: 'checkstyle'
+
+compileJava {
+  options.deprecation = true
+  doLast {
+    println 'CM -- compileJava'
+  }
+}
+
 checkstyle {
     toolVersion '8.0'
     configFile file("config/checkstyle/checkstyle.xml")
 }
 checkstyleMain {
     source ='src/main/java'
-}
-
-compileJava {
-  options.deprecation = true
-  doLast {
-    println 'CM -- compileJava'
-    check
-  }
 }
 
 task run(dependsOn: ':bootRun') {
