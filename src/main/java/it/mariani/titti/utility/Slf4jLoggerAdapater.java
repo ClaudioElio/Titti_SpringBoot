@@ -15,7 +15,7 @@ public class Slf4jLoggerAdapater implements Logger {
 
     @Override
     public void debug(String format, Object... argArray) {
-        delegate.debug(format, args);
+        delegate.debug(format, argArray);
     }
     
     @Override
