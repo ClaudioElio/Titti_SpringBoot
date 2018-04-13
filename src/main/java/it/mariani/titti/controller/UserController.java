@@ -14,7 +14,7 @@ public class UserController {
 
     @RequestMapping(value = "/me")
     public Principal user(Principal principal) {
-        Logger.info("Principal:", principal);
+        logger.info("Principal:", principal);
         return principal;
     }
 
