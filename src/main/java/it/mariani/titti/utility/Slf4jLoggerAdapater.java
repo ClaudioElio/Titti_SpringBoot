@@ -27,10 +27,7 @@ public class Slf4jLoggerAdapater implements Logger {
     public void error(String format, Throwable t, Object... argArray) {
         delegate.error(format, t, argArray);
     }
-    @Override
-    public boolean isTraceEnabled() {
-        return delegate.isTraceEnabled();
-    }
+
     public String getName() {
         return delegate.getName();
     }
