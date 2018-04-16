@@ -13,3 +13,8 @@ security:
     resource:
       userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
       preferTokenInfo: true
+spring:
+  messages:
+    basename: messages/messages
+    cache-seconds: -1
+    encoding: UTF-8
