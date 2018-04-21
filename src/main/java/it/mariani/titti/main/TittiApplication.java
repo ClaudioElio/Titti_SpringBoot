@@ -6,5 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(scanBasePackages = {"it.mariani.titti.controller"})
 public class TittiApplication {
 
-
+  public static void run() {
+SpringApplication.run(TittiApplication.class);
+  }
 }
