@@ -17,7 +17,7 @@ spring:
   thymeleaf:
     cache: false
   messages:
-    basename: message/messages
+    basename: messages/messages
     cache-seconds: -1
     encoding: UTF-8
     
