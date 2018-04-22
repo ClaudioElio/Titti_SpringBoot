@@ -21,7 +21,7 @@ spring:
     cache-seconds: -1
     encoding: UTF-8
 management:
-	endpoints:
-		web:
-			exposure:
-				include: "*"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
