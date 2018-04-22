@@ -40,7 +40,7 @@ checkstyleMain {
 }
 
 bootRun {
-    jvmArgs = ["-Dapp_clientId=1063849431273-tr6mtpd9kek4j4unba80pc7cc2kmb3au.apps.googleusercontent.com", "-Dapp_clientSecret=RgdnUX-KyDXvATx0uVgYml8R"]
+//    jvmArgs = ["-Dapp_clientId=1063849431273-tr6mtpd9kek4j4unba80pc7cc2kmb3au.apps.googleusercontent.com", "-Dapp_clientSecret=RgdnUX-KyDXvATx0uVgYml8R"]
 }
 
 task run(dependsOn: ':bootRun') {
