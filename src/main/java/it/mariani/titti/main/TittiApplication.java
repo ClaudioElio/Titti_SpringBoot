@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TittiApplication {
 
   public static void run(String[] args) {
-SpringApplication.run(TittiApplication.class, args);
+    SpringApplication.run(TittiApplication.class, args);
   }
 }
