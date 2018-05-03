@@ -1,16 +1,16 @@
-group 'io.wedeploy.example'
+group 'it.mariani.titti'
 version '1.0-SNAPSHOT'
 
 buildscript {
 
     ext {
-        springBootVersion = '2.0.1.RELEASE'
+        springBootVersion = '2.1.0.BUILD-SNAPSHOT'
     }
 
   repositories {
     mavenLocal()
     mavenCentral()
-    maven { url "http://repo.spring.io/release" }
+    maven { url "http://repo.spring.io/snapshot" }
   }
   
   dependencies {
@@ -21,11 +21,18 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
-
 apply plugin: 'checkstyle'
 
 compileJava {
   options.deprecation = true
+  sourceCompatibility = 1.9
+  targetCompatibility = 1.9
+//  doFirst {
+//        options.compilerArgs = [
+//           '--module-path', classpath.asPath,
+//      ]
+//        classpath = files()  
+//  }
   doLast {
     println 'CM -- compileJava'
   }
@@ -52,7 +59,7 @@ task run(dependsOn: ':bootRun') {
 repositories {
   mavenLocal()
   mavenCentral()
-  maven { url "http://repo.spring.io/release" }
+  maven { url "http://repo.spring.io/snapshot" }
 }
 
 dependencies {
@@ -65,6 +72,6 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '4.6'
+  gradleVersion = '4.7'
 }
 
