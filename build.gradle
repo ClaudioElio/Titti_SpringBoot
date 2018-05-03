@@ -21,6 +21,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 apply plugin: 'checkstyle'
 
 compileJava {
