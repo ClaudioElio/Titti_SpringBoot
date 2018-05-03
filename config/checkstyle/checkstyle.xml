@@ -61,12 +61,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
         <property name="message" value='All TODOs should be named.  e.g. "TODO: (ENG-123) - Refactor when v2 is released."' />
     </module>
 
-    <!--<module name="JavadocPackage">-->
-        <!--&lt;!&ndash; Checks that each Java package has a Javadoc file used for commenting.-->
-          <!--Only allows a package-info.java, not package.html. &ndash;&gt;-->
-        <!--<property name="severity" value="warning"/>-->
-    <!--</module>-->
-
     <!-- All Java AST specific tests live under TreeWalker module. -->
     <module name="TreeWalker">
 
@@ -89,16 +83,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
             <property name="severity" value="error" />
         </module>
 
-        <module name="ImportOrder">
-            <!-- Checks for out of order import statements. -->
-            <property name="severity" value="error" />
-            <property name="ordered" value="true" />
-            <property name="groups" value="/([^j]|.[^a]|..[^v]|...[^a])/,/^javax?\./" />
-            <!-- This ensures that static imports go to the end. -->
-            <property name="option" value="bottom" />
-            <property name="tokens" value="STATIC_IMPORT, IMPORT" />
-        </module>
-
         <module name="IllegalImport">
             <property name="illegalPkgs" value="junit.framework" />
         </module>
@@ -118,35 +102,6 @@ page at http://checkstyle.sourceforge.net/config.html -->
             <property name="severity" value="warning" />
         </module>
 
-        <!--
-
-        JAVADOC CHECKS
-
-        -->
-
-        <!-- Checks for Javadoc comments.                     -->
-        <!-- See http://checkstyle.sf.net/config_javadoc.html -->
-<!--
-        <module name="JavadocMethod">
-            <property name="scope" value="protected" />
-            <property name="severity" value="error" />
-            <property name="allowMissingJavadoc" value="true" />
-            <property name="allowMissingParamTags" value="true" />
-            <property name="allowMissingReturnTag" value="true" />
-            <property name="allowMissingThrowsTags" value="true" />
-            <property name="allowThrowsTagsForSubclasses" value="true" />
-            <property name="allowUndeclaredRTE" value="true" />
-        </module>
-
-        <module name="JavadocType">
-            <property name="scope" value="protected" />
-            <property name="severity" value="error" />
-        </module>
-
-        <module name="JavadocStyle">
-            <property name="severity" value="error" />
-        </module>
--->
 
         <!--
 
@@ -244,7 +199,7 @@ page at http://checkstyle.sourceforge.net/config.html -->
 
         <module name="LineLength">
             <!-- Checks if a line is too long. -->
-            <property name="max" value="120" default="120" />
+            <property name="max" value="160" default="160" />
             <property name="severity" value="error" />
 
             <!--
