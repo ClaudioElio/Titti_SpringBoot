@@ -4,13 +4,13 @@ version '1.0-SNAPSHOT'
 buildscript {
 
     ext {
-        springBootVersion = '2.0.1.RELEASE'
+        springBootVersion = '2.1.0.BUILD-SNAPSHOT'
     }
 
   repositories {
     mavenLocal()
     mavenCentral()
-    maven { url "http://repo.spring.io/release" }
+    maven { url "http://repo.spring.io/snapshot" }
   }
   
   dependencies {
@@ -55,7 +55,7 @@ task run(dependsOn: ':bootRun') {
 repositories {
   mavenLocal()
   mavenCentral()
-  maven { url "http://repo.spring.io/release" }
+  maven { url "http://repo.spring.io/snapshot" }
 }
 
 dependencies {
