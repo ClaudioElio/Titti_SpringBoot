@@ -26,7 +26,10 @@ apply plugin: 'checkstyle'
 
 compileJava {
   options.deprecation = true
-  doLast {
+  sourceCompatibility = 1.9
+  targetCompatibility = 1.9
+
+doLast {
     println 'CM -- compileJava'
   }
 }
