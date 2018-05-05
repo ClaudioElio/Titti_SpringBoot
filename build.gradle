@@ -5,6 +5,7 @@ buildscript {
 
     ext {
         springBootVersion = '2.1.0.BUILD-SNAPSHOT'
+        springFrameworkVersion = '5.0.6.BUILD-SNAPSHOT'
     }
 
   repositories {
@@ -79,6 +80,13 @@ dependencies {
   compile("org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE")
   compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
 
+
+//  compile("org.springframework:spring-context:${springFrameworkVersion}")
+//  compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
+//  compile("org.springframework.boot:spring-boot:${springBootVersion}")
+//  compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
+//  compile("org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE")
+//  compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
   check
 }
 
