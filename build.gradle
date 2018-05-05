@@ -6,6 +6,8 @@ buildscript {
     ext {
         springBootVersion = '2.1.0.BUILD-SNAPSHOT'
         springFrameworkVersion = '5.0.6.BUILD-SNAPSHOT'
+        springSecurityVersion = '5.0.4.RELEASE'
+        springOauthVersion = '2.2.0.RELEASE'
     }
 
   repositories {
@@ -51,7 +53,7 @@ checkstyleMain {
 }
 
 bootRun {
-//    jvmArgs = ["-Dapp_clientId=1063849431273-tr6mtpd9kek4j4unba80pc7cc2kmb3au.apps.googleusercontent.com", "-Dapp_clientSecret=RgdnUX-KyDXvATx0uVgYml8R"]
+    jvmArgs = ["-Dapp_clientId=1063849431273-tr6mtpd9kek4j4unba80pc7cc2kmb3au.apps.googleusercontent.com", "-Dapp_clientSecret=RgdnUX-KyDXvATx0uVgYml8R"]
 }
 
 task run(dependsOn: ':bootRun') {
@@ -67,26 +69,24 @@ repositories {
 }
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") {
-    exclude module: "spring-boot-starter-tomcat"
-  }
-  compile 'org.apache.tomcat.embed:tomcat-embed-core:9.0.7'
-  compile 'org.apache.tomcat.embed:tomcat-embed-el:9.0.7'
-  compile 'org.apache.tomcat.embed:tomcat-embed-websocket:9.0.7'
 
-  compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
-  compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
-  compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
-  compile("org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE")
+  compile("org.springframework.boot:spring-boot:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
+  compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
+
+  compile("org.springframework:spring-context:${springFrameworkVersion}")
+  compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
+
+  compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
+  compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
+  compile("org.springframework.security.oauth:spring-security-oauth2:${springOauthVersion}")
   compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
 
+  compile("org.thymeleaf:thymeleaf-spring5:3.0.9.RELEASE")
+  compile("org.yaml:snakeyaml:1.19")
+  compile 'org.apache.tomcat.embed:tomcat-embed-core:9.0.7'
 
-//  compile("org.springframework:spring-context:${springFrameworkVersion}")
-//  compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
-//  compile("org.springframework.boot:spring-boot:${springBootVersion}")
-//  compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
-//  compile("org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE")
-//  compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
   check
 }
 
