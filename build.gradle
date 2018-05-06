@@ -33,7 +33,7 @@ compileJava {
 //  sourceCompatibility = 1.9
 //  targetCompatibility = 1.9
 
-doLast {
+  doLast {
     println 'CM -- compileJava'
   }
 }
