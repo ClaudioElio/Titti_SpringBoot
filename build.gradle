@@ -80,7 +80,8 @@ dependencies {
   compile("org.yaml:snakeyaml:1.19")
 //  compile("org.apache.tomcat.embed:tomcat-embed-core:9.0.7")
   compile("org.eclipse.jetty:jetty-server:9.4.9.v20180320")
-  
+  compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+
   check
 
 }
