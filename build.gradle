@@ -68,7 +68,7 @@ dependencies {
   compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
   compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
 
-  compile("org.springframework:spring-context:${springFrameworkVersion}")
+//  compile("org.springframework:spring-context:${springFrameworkVersion}")
   compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
 
   compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
