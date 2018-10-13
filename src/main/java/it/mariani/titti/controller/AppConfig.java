@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 package it.mariani.titti.controller;
-=======
-package it.mariani.titti.main.controller;
->>>>>>> 6741384dfcfaeaf1a0c93de4080bbd709a21f546
  
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
