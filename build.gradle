@@ -4,10 +4,11 @@ version '1.0-SNAPSHOT'
 buildscript {
 
     ext {
-        springBootVersion = '2.1.0.BUILD-SNAPSHOT' // '2.1.0.BUILD-SNAPSHOT' OR 2.0.1.RELEASE
-        springFrameworkVersion = '5.0.6.BUILD-SNAPSHOT'
-        springSecurityVersion = '5.0.4.RELEASE'
-        springOauthVersion = '2.2.0.RELEASE'
+        springBootVersion = '2.1.0.BUILD-SNAPSHOT'
+        springBootGradlePluginVersion = '2.1.0.BUILD-SNAPSHOT'
+        springFrameworkVersion = '5.1.1.BUILD-SNAPSHOT'
+        springSecurityVersion = '5.1.1.BUILD-SNAPSHOT'
+        springOauthVersion = '2.1.0.BUILD-SNAPSHOT'
     }
 
   repositories {
@@ -15,31 +16,32 @@ buildscript {
     mavenCentral()
     maven { url "http://repo.spring.io/release" }
     maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/libs-snapshot" }
   }
   
   dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
   }
 
 }
 
 apply plugin: 'java'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
-
 apply plugin: 'checkstyle'
 
 compileJava {
   options.deprecation = true
 
-  sourceCompatibility = 1.9
-  targetCompatibility = 1.9
-
-//  doFirst {
-//        options.compilerArgs = [
-//           '--module-path', classpath.asPath,
-//      ]
-//        classpath = files()  
-//  }
+  sourceCompatibility = 10
+  targetCompatibility = 10
+/*
+  doFirst {
+        options.compilerArgs = [
+           '--module-path', classpath.asPath,
+      ]
+        classpath = files()  
+  }
+i*/
   doLast {
     println 'CM -- compileJava'
   }
@@ -66,7 +68,9 @@ repositories {
   mavenCentral()
   maven { url "http://repo.spring.io/release" }
   maven { url "http://repo.spring.io/snapshot" }
+  maven { url "http://repo.spring.io/libs-snapshot" }
 }
+
 
 dependencies {
 
@@ -74,24 +78,18 @@ dependencies {
   compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
   compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
   compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
-
   compile("org.springframework:spring-context:${springFrameworkVersion}")
   compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
-
   compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
   compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
-  compile("org.springframework.security.oauth:spring-security-oauth2:${springOauthVersion}")
-  compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE")
-
+  compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
   compile("org.thymeleaf:thymeleaf-spring5:3.0.9.RELEASE")
-  compile("org.yaml:snakeyaml:1.19")
-  compile 'org.apache.tomcat.embed:tomcat-embed-core:9.0.7'
-
+  compile("org.yaml:snakeyaml:1.23")
+  compile("org.apache.tomcat.embed:tomcat-embed-core:9.0.7")
   check
 
 }
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '4.7'
+wrapper {
+  gradleVersion = '4.10.2'
 }
-
