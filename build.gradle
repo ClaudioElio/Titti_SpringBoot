@@ -32,8 +32,8 @@ apply plugin: 'checkstyle'
 compileJava {
   options.deprecation = true
 
-  sourceCompatibility = 10
-  targetCompatibility = 10
+  sourceCompatibility = 8
+  targetCompatibility = 8
 /*
   doFirst {
         options.compilerArgs = [
