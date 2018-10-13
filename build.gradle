@@ -78,14 +78,27 @@ dependencies {
   compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
   compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
   compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
+<<<<<<< HEAD
   compile("org.springframework:spring-context:${springFrameworkVersion}")
+=======
+
+//  compile("org.springframework:spring-context:${springFrameworkVersion}")
+>>>>>>> 57d4beb0d04cec6de58327cbde01f8ff20a9e22b
   compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
   compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
   compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
   compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
   compile("org.thymeleaf:thymeleaf-spring5:3.0.9.RELEASE")
+<<<<<<< HEAD
   compile("org.yaml:snakeyaml:1.23")
   compile("org.apache.tomcat.embed:tomcat-embed-core:9.0.7")
+=======
+  compile("org.yaml:snakeyaml:1.19")
+//  compile("org.apache.tomcat.embed:tomcat-embed-core:9.0.7")
+  compile("org.eclipse.jetty:jetty-server:9.4.9.v20180320")
+  compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+
+>>>>>>> 57d4beb0d04cec6de58327cbde01f8ff20a9e22b
   check
 
 }
