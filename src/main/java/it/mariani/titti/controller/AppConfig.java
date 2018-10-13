@@ -1,4 +1,4 @@
-package it.mariani.titti.main.controller;
+package it.mariani.titti.controller;
  
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
