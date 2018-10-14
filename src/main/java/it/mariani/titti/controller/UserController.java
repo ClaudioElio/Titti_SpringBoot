@@ -1,7 +1,7 @@
 package it.mariani.titti.controller;
 
-import it.mariani.titti.utility.Logger;
-import it.mariani.titti.utility.LoggerFactory;
+import it.mariani.titti.utility.Logger.Logger;
+import it.mariani.titti.utility.Logger.LoggerFactory;
 import java.security.Principal;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
