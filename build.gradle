@@ -3,25 +3,25 @@ version '1.0-SNAPSHOT'
 
 buildscript {
 
-    ext {
-        springBootVersion = '2.1.0.BUILD-SNAPSHOT'
-        springBootGradlePluginVersion = '2.1.0.BUILD-SNAPSHOT'
-        springFrameworkVersion = '5.1.1.BUILD-SNAPSHOT'
-        springSecurityVersion = '5.1.1.BUILD-SNAPSHOT'
-        springOauthVersion = '2.1.0.BUILD-SNAPSHOT'
-    }
+	ext {
+		springBootVersion = '2.1.0.BUILD-SNAPSHOT'
+		springBootGradlePluginVersion = '2.1.0.BUILD-SNAPSHOT'
+		springFrameworkVersion = '5.1.2.BUILD-SNAPSHOT'
+		springSecurityVersion = '5.1.2.BUILD-SNAPSHOT'
+		springOauthVersion = '2.1.0.BUILD-SNAPSHOT'
+	}
 
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url "http://repo.spring.io/release" }
-    maven { url "http://repo.spring.io/snapshot" }
-    maven { url "http://repo.spring.io/libs-snapshot" }
-  }
+		repositories {
+		mavenLocal()
+		mavenCentral()
+		maven { url "http://repo.spring.io/release" }
+		maven { url "http://repo.spring.io/snapshot" }
+		maven { url "http://repo.spring.io/libs-snapshot" }
+	}
   
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
-  }
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
+	}
 
 }
 
@@ -30,67 +30,59 @@ apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 apply plugin: 'checkstyle'
 
 compileJava {
-  options.deprecation = true
+	options.deprecation = true
 
-  sourceCompatibility = 8
-  targetCompatibility = 8
-/*
-  doFirst {
-        options.compilerArgs = [
-           '--module-path', classpath.asPath,
-      ]
-        classpath = files()  
-  }
-i*/
-  doLast {
-    println 'CM -- compileJava'
-  }
+	sourceCompatibility = 10
+	targetCompatibility = 10
+	doLast {
+		println 'CM -- compileJava'
+	}
 }
 
 checkstyle {
-    toolVersion '8.0'
-    configFile file("config/checkstyle/checkstyle.xml")
+	toolVersion '8.0'
+	configFile file("config/checkstyle/checkstyle.xml")
 }
 checkstyleMain {
-    source ='src/main/java'
+	source ='src/main/java'
 }
 
 apply from: 'setJVMArgs.gradle'
 
 task run(dependsOn: ':bootRun') {
-  doLast {
-    println 'CM -- Boot'
-  }
+	doLast {
+		println 'CM -- Boot'
+	}
 }
 
 repositories {
-  mavenLocal()
-  mavenCentral()
-  maven { url "http://repo.spring.io/release" }
-  maven { url "http://repo.spring.io/snapshot" }
-  maven { url "http://repo.spring.io/libs-snapshot" }
+	mavenLocal()
+	mavenCentral()
+	maven { url "http://repo.spring.io/release" }
+	maven { url "http://repo.spring.io/snapshot" }
+	maven { url "http://repo.spring.io/libs-snapshot" }
 }
 
 
 dependencies {
 
-  compile("org.springframework.boot:spring-boot:${springBootVersion}")
-  compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
-  compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
-  compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
-  compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
-  compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
-  compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
-  compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
-  compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
-  compile("org.thymeleaf:thymeleaf-spring5:3.0.10.RELEASE")
-  compile("org.yaml:snakeyaml:1.23")
-  compile("org.eclipse.jetty:jetty-server:9.4.12.v20180830")
+	compile("org.springframework.boot:spring-boot:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+	compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
+	compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
+	compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
+	compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
+	compile("org.thymeleaf:thymeleaf-spring5:3.0.10.RELEASE")
+	compile("org.yaml:snakeyaml:1.23")
+	compile("org.eclipse.jetty:jetty-server:9.4.12.v20180830")
 
-  check
+	check
 
 }
 
 wrapper {
-  gradleVersion = '4.10.2'
+	gradleVersion = '4.10.2'
 }
