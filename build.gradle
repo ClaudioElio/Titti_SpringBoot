@@ -4,8 +4,8 @@ version '1.0-SNAPSHOT'
 buildscript {
 
 	ext {
-		springBootVersion = '2.1.0.BUILD-SNAPSHOT'
-		springBootGradlePluginVersion = '2.1.0.BUILD-SNAPSHOT'
+		springBootVersion = '2.1.4.RELEASE' // '2.1.0.BUILD-SNAPSHOT'
+		springBootGradlePluginVersion = '2.1.4.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
 		springFrameworkVersion = '5.1.2.BUILD-SNAPSHOT'
 		springSecurityVersion = '5.1.2.BUILD-SNAPSHOT'
 		springOauthVersion = '2.1.0.BUILD-SNAPSHOT'
