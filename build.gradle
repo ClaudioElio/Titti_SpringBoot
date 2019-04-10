@@ -32,8 +32,8 @@ apply plugin: 'checkstyle'
 compileJava {
 	options.deprecation = true
 
-	sourceCompatibility = 1.8
-	targetCompatibility = 1.8
+	sourceCompatibility = 11
+	targetCompatibility = 11
 	doLast {
 		println 'CM -- compileJava'
 	}
@@ -84,6 +84,6 @@ dependencies {
 }
 
 wrapper {
-	//gradleVersion = '4.10.2'
-	gradleVersion = '2.0'
+	gradleVersion = '5.3.1'
+	//gradleVersion = '2.0'
 }
