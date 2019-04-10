@@ -6,9 +6,10 @@ buildscript {
 	ext {
 		springBootVersion = '2.1.4.RELEASE' // '2.1.0.BUILD-SNAPSHOT'
 		springBootGradlePluginVersion = '2.1.4.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
-		springFrameworkVersion = '5.1.2.BUILD-SNAPSHOT'
-		springSecurityVersion = '5.1.2.BUILD-SNAPSHOT'
-		springOauthVersion = '2.1.0.BUILD-SNAPSHOT'
+		springFrameworkVersion = '5.1.6.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
+		springSecurityVersion = '5.1.5.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
+		springOauthVersion = '2.1.4.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
+		jettyServer = '9.4.12.v20180830'
 	}
 
 		repositories {
@@ -77,7 +78,7 @@ dependencies {
 	compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
 	compile("org.thymeleaf:thymeleaf-spring5:3.0.10.RELEASE")
 	compile("org.yaml:snakeyaml:1.23")
-	compile("org.eclipse.jetty:jetty-server:9.4.12.v20180830")
+	compile("org.eclipse.jetty:jetty-server:${jettyServer}")
 
 	check
 
