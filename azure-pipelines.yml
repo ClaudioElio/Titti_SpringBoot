@@ -29,7 +29,7 @@ steps:
     
 - task: CopyFiles@2
   inputs:
-    contents: '**/*.jar'
+    contents: '**/Titti_SpringBoot*.jar'
     targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
