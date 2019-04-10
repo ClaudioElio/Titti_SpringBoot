@@ -11,7 +11,7 @@ steps:
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
-    gradleOptions: '--debug -Xmx3072m'
+    gradleOptions: '-Dorg.gradle.logging.level=debug -Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
