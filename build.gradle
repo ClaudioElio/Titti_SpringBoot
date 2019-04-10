@@ -9,9 +9,9 @@ buildscript {
 		springFrameworkVersion = '5.1.6.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
 		springSecurityVersion = '5.1.5.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
 		springOauthVersion = '2.1.4.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
-		thymeLeaf = '3.0.10.RELEASE'
-		snakeYaml = '1.23'
-		jettyServer = '9.4.15.v20190215' //'9.4.12.v20180830'
+		thymeLeafVersion = '3.0.11.RELEASE' //'3.0.10.RELEASE'
+		snakeYamlVersion = '1.24' //'1.23'
+		jettyServerVersion = '9.4.15.v20190215' //'9.4.12.v20180830'
 	}
 
 		repositories {
@@ -78,9 +78,9 @@ dependencies {
 	compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
 	compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
 	compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
-	compile("org.thymeleaf:thymeleaf-spring5:${thymeLeaf}")
-	compile("org.yaml:snakeyaml:${snakeYaml}")
-	compile("org.eclipse.jetty:jetty-server:${jettyServer}")
+	compile("org.thymeleaf:thymeleaf-spring5:${thymeLeafVersion}")
+	compile("org.yaml:snakeyaml:${snakeYamlVersion}")
+	compile("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
 
 	check
 
