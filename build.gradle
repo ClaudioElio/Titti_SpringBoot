@@ -28,7 +28,7 @@ buildscript {
 
 }
 
-apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 apply plugin: 'checkstyle'
 
@@ -73,7 +73,8 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
-	compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+//	compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
 	compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
 	compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
 	compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
