@@ -28,7 +28,7 @@ buildscript {
 
 }
 
-apply plugin: 'war'
+apply plugin: 'bootWar'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 apply plugin: 'checkstyle'
 
