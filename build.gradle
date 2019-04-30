@@ -73,15 +73,17 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
+
 //	compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+//	compile("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
 	compile("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+
 	compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
 	compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
 	compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
 	compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
 	compile("org.thymeleaf:thymeleaf-spring5:${thymeLeafVersion}")
 	compile("org.yaml:snakeyaml:${snakeYamlVersion}")
-	compile("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
 
 	check
 
