@@ -14,7 +14,7 @@ buildscript {
 		jettyServerVersion = '9.4.15.v20190215' //'9.4.12.v20180830'
 	}
 
-		repositories {
+	repositories {
 		mavenLocal()
 		mavenCentral()
 		maven { url "http://repo.spring.io/release" }
