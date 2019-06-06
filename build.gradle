@@ -4,17 +4,17 @@ version '1.0-SNAPSHOT'
 buildscript {
 
 	ext {
-		springBootVersion = '2.1.4.RELEASE' // '2.1.0.BUILD-SNAPSHOT'
-		springBootGradlePluginVersion = '2.1.4.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
-		springFrameworkVersion = '5.1.6.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
+		springBootVersion = '2.1.5.RELEASE' // '2.1.0.BUILD-SNAPSHOT'
+		springBootGradlePluginVersion = '2.1.5.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
+		springFrameworkVersion = '5.1.7.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
 		springSecurityVersion = '5.1.5.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
-		springOauthVersion = '2.1.4.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
+		springOauthVersion = '2.1.5.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
 		thymeLeafVersion = '3.0.11.RELEASE' //'3.0.10.RELEASE'
 		snakeYamlVersion = '1.24' //'1.23'
 		jettyServerVersion = '9.4.15.v20190215' //'9.4.12.v20180830'
 	}
 
-		repositories {
+	repositories {
 		mavenLocal()
 		mavenCentral()
 		maven { url "http://repo.spring.io/release" }
