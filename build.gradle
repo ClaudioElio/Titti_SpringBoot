@@ -4,8 +4,9 @@ version '1.0-SNAPSHOT'
 buildscript {
 
 	ext {
-		springBootVersion = '2.1.6.RELEASE' // '2.1.0.BUILD-SNAPSHOT'
-		springBootGradlePluginVersion = '2.1.6.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
+		springBootVersion = '2.1.6.RELEASE'
+		springCloudVersion = '2.1.2.RELEASE'
+		springBootGradlePluginVersion = '2.1.6.RELEASE'
 		springFrameworkVersion = '5.1.8.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
 		springSecurityVersion = '5.1.5.RELEASE' //'5.1.2.BUILD-SNAPSHOT'
 		springOauthVersion = '2.1.5.RELEASE' //'2.1.0.BUILD-SNAPSHOT'
@@ -21,56 +22,83 @@ buildscript {
 		maven { url "http://repo.spring.io/snapshot" }
 		maven { url "http://repo.spring.io/libs-snapshot" }
 	}
-  
+
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
 	}
 
 }
 
-apply plugin: 'war'
-apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
-apply plugin: 'checkstyle'
+apply from: 'setJVMArgs.gradle'
 
-compileJava {
-	options.deprecation = true
+allprojects {
 
-	sourceCompatibility = 11
-	targetCompatibility = 11
-	doLast {
-		println 'CM -- compileJava'
+	apply plugin: 'war'
+	apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+	apply plugin: 'checkstyle'
+	
+	
+	compileJava {
+		options.deprecation = true
+	
+		sourceCompatibility = 11
+		targetCompatibility = 11
+		doLast {
+			println 'CM -- compileJava'
+		}
 	}
+
+	checkstyle {
+		toolVersion '8.0'
+		configFile file("config/checkstyle/checkstyle.xml")
+	}
+	
+	checkstyleMain {
+		source ='src/main/java'
+	}
+	
+	task run(dependsOn: ':bootRun') {
+		doLast {
+			println 'CM -- BootRun'
+		}
+	}
+
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		maven { url "http://repo.spring.io/release" }
+		maven { url "http://repo.spring.io/snapshot" }
+		maven { url "http://repo.spring.io/libs-snapshot" }
+	}
+	
+	task superBuild(dependsOn: ':bootWar') {
+		doLast {
+			println 'CM -- BootWar'
+			copy {
+			    from "./build/libs/"
+	    		into "./config/docker/tomcat/"
+	    	}
+			copy {
+			    from "./src/main/resources/static/"
+	    		into "./config/docker/http/htdocs"
+	    	}
+	
+		}
+	}
+	
+	wrapper {
+		gradleVersion = '5.5'
+	}
+
 }
 
 war {
     baseName = "titti"
 }
 
-checkstyle {
-	toolVersion '8.0'
-	configFile file("config/checkstyle/checkstyle.xml")
+bootWar {
+	archiveName = "titti.war"
 }
-
-checkstyleMain {
-	source ='src/main/java'
-}
-
-apply from: 'setJVMArgs.gradle'
-
-task run(dependsOn: ':bootRun') {
-	doLast {
-		println 'CM -- BootRun'
-	}
-}
-
-repositories {
-	mavenLocal()
-	mavenCentral()
-	maven { url "http://repo.spring.io/release" }
-	maven { url "http://repo.spring.io/snapshot" }
-	maven { url "http://repo.spring.io/libs-snapshot" }
-}
-
 
 dependencies {
 
@@ -90,29 +118,28 @@ dependencies {
 	compile("org.thymeleaf:thymeleaf-spring5:${thymeLeafVersion}")
 	compile("org.yaml:snakeyaml:${snakeYamlVersion}")
 
+//	compile("org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}")
+//	compile("org.springframework.cloud:spring-cloud-netflix-eureka-client:${springCloudVersion}")
+	compile("com.netflix.eureka:eureka-client:1.9.12")
+	compile("com.google.code.gson:gson:2.8.5")
+
 	check
 
 }
 
-bootWar {
-	archiveName = "titti.war"
-}
+subprojects {
 
-task superBuild(dependsOn: ':bootWar') {
-	doLast {
-		println 'CM -- BootWar'
-		copy {
-		    from "./build/libs/"
-    		into "./config/docker/tomcat/"
-    	}
-		copy {
-		    from "./src/main/resources/static/"
-    		into "./config/docker/http/htdocs"
-    	}
+	dependencies {
+	
+		compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}")
+		compile("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+		compile("com.sun.xml.bind:jaxb-core:2.3.0.1")
+		compile("javax.xml.bind:jaxb-api:2.3.1")
+		compile("com.sun.xml.bind:jaxb-impl:2.3.1")
+		compile("com.google.code.gson:gson:2.8.5")
 
 	}
+
 }
 
-wrapper {
-	gradleVersion = '5.4.1'
-}
