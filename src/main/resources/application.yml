@@ -5,7 +5,7 @@ spring:
     cache: false
   messages:
     basename: messages/messages
-    cache-seconds: -1
+    cache-duration: -1
     encoding: UTF-8
 
 security:
@@ -23,14 +23,16 @@ security:
     resource:
       userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
       preferTokenInfo: true
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${registry.host:localhost}:${registry.port:8761}/eureka/
+      defaultZone: http://${registry_host:localhost}:${registry_port:8761}/eureka
     healthcheck:
       enabled: true
