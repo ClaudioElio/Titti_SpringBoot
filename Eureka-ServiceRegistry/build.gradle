@@ -1,0 +1,25 @@
+apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+dependencies {
+
+		compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springEurekaVersion}")
+		compile("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+		compile("com.sun.xml.bind:jaxb-core:2.3.0.1")
+		compile("com.sun.xml.bind:jaxb-impl:2.3.1")
+		compile("com.google.code.gson:gson:2.8.5")
+		compile("javax.xml.bind:jaxb-api:2.3.1")
+		compile("org.springframework.boot:spring-boot-starter-actuator:2.1.9.RELEASE")
+
+}
+
+bootJar {
+		doLast {
+			println 'CM -- BootWar'
+			copy {
+		    	from "./build/libs/"
+				into "./docker/"
+			}
+	
+		}
+
+}
