@@ -1,0 +1,63 @@
+apply plugin: 'war'
+apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+dependencies {
+
+	compile("org.springframework:spring-webmvc:${springFrameworkVersion}")
+	compile("org.springframework:spring-jdbc:${springFrameworkVersion}")
+	compile("org.springframework.boot:spring-boot:${springBootVersion}")
+//	compile("org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
+
+//	compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+//	compile("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
+	compile("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+
+	compile("javax.validation:validation-api:2.0.1.Final")
+	compile("org.springframework.security:spring-security-config:${springSecurityVersion}")
+	compile("org.springframework.security:spring-security-web:${springSecurityVersion}")
+	compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:${springOauthVersion}")
+	compile("org.thymeleaf:thymeleaf-spring5:${thymeLeafVersion}")
+	compile("org.yaml:snakeyaml:${snakeYamlVersion}")
+
+//	compile("org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springEurekaVersion}")
+//	compile("org.springframework.cloud:spring-cloud-netflix-eureka-client:${springCloudVersion}")
+	compile("com.netflix.eureka:eureka-client:1.9.12")
+	compile("com.google.code.gson:gson:2.8.5")
+
+	compile("io.micrometer:micrometer-core:1.2.1")
+
+//	compile("org.springframework.cloud:spring-cloud-starter-web:${springCloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-starter-sleuth:${springCloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-sleuth-zipkin:${springCloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-starter-zipkin:${springCloudVersion}")
+	compile("org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}")
+
+	compile("net.logstash.logback:logstash-logback-encoder:6.1")
+
+
+	check
+
+}
+
+war {
+    baseName = "titti"
+}
+
+bootWar {
+	archiveName = "titti.war"
+	doLast {
+		copy {
+	    	from "./build/libs/"
+			into "./docker/tomcat/"
+		}
+		copy {
+		    from "./src/main/resources/static/"
+	    	into "./docker/http/htdocs"
+	    }
+
+	}
+}
+
