@@ -30,7 +30,7 @@
 			</providers>
 		</encoder>
 	</appender>
-	<root level="DEBUG">
+	<root level="ERROR">
 		<appender-ref ref="CONSOLE" />
 	</root>
 </configuration>

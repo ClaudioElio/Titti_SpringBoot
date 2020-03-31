@@ -4,25 +4,27 @@ version '1.0-SNAPSHOT'
 buildscript {
 
 	ext {
-		springBootVersion = '2.1.9.RELEASE'
-		springCloudVersion = '2.1.4.RELEASE'
-		springEurekaVersion = '2.1.3.RELEASE'
-		springBootGradlePluginVersion = '2.1.8.RELEASE'
-		springFrameworkVersion = '5.1.10.RELEASE'
-		springSecurityVersion = '5.1.6.RELEASE'
-		springOauthVersion = '2.1.8.RELEASE'
+		springBootVersion = '2.2.6.RELEASE'
+		springCloudVersion = '2.2.2.RELEASE'
+		springEurekaVersion = '2.2.2.RELEASE'
+		springBootGradlePluginVersion = '2.2.5.RELEASE'
+		springFrameworkVersion = '5.2.5.RELEASE'
+		springSecurityVersion = '5.3.0.RELEASE'
+		springOauthVersion = '2.2.5.RELEASE'
 		thymeLeafVersion = '3.0.11.RELEASE'
-		snakeYamlVersion = '1.24'
-		dockerGradlePluginVersion = '0.22.1'
-//		jettyServerVersion = '9.4.15.v20190215' //'9.4.12.v20180830'
+		snakeYamlVersion = '1.26'
+		dockerGradlePluginVersion = '0.22.2'
+		googleGsonVersion = '2.8.5'
+		validationApiVersion = '2.0.1.Final'
+//		jettyServerVersion = '9.4.27.v20200227'
 	}
 
 	repositories {
 		mavenLocal()
 		mavenCentral()
-		maven { url "http://repo.spring.io/release" }
-		maven { url "http://repo.spring.io/snapshot" }
-		maven { url "http://repo.spring.io/libs-snapshot" }
+		maven { url "https://repo.spring.io/release" }
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/libs-snapshot" }
 		maven { url "https://plugins.gradle.org/m2/" }
 	}
 
@@ -46,8 +48,8 @@ subprojects {
 	compileJava {
 		options.deprecation = true
 	
-		sourceCompatibility = 12
-		targetCompatibility = 12
+		sourceCompatibility = 11
+		targetCompatibility = 11
 
 		inputs.property("moduleName", moduleName)
 		doFirst {
@@ -62,9 +64,9 @@ subprojects {
 	}
 
 	checkstyle {
-		toolVersion '8.0'
+		toolVersion '8.30'
 //		configFile file("$project.rootDir/config/checkstyle/checkstyle.xml")
-		configDir file("$project.rootDir/config/checkstyle")
+		configDirectory.set file("$project.rootDir/config/checkstyle")
 		reportsDir = file("$project.buildDir/reports/checkstyle")
 	}
 	
@@ -81,14 +83,14 @@ subprojects {
 	repositories {
 		mavenLocal()
 		mavenCentral()
-		maven { url "http://repo.spring.io/release" }
-		maven { url "http://repo.spring.io/snapshot" }
-		maven { url "http://repo.spring.io/libs-snapshot" }
+		maven { url "https://repo.spring.io/release" }
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/libs-snapshot" }
 	}
 	
 
 	wrapper {
-		gradleVersion = '5.6.2'
+		gradleVersion = '6.2.2'
 	}
 
 }

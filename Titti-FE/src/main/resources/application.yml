@@ -10,22 +10,13 @@ spring:
   autoconfigure:
     exclude:
     - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-
-security:
-  oauth2:
-    client:
-      clientId: ${app_clientId}
-      clientSecret: ${app_clientSecret}
-      accessTokenUri: https://www.googleapis.com/oauth2/v4/token
-      userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
-      clientAuthenticationScheme: form
-      scope:
-        - openid
-        - email
-        - profile
-    resource:
-      userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
-      preferTokenInfo: true
+  security:
+    oauth2:
+      client:
+        registration:   
+          google:   
+            client-id: ${app_clientId}
+            client-secret: ${app_clientSecret}
 
 management:
   endpoints:
