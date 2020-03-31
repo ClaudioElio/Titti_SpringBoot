@@ -1,13 +1,9 @@
 package it.mariani.titti.controller;
 
-//import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-//@EnableOAuth2Sso
 @Controller
 @RequestMapping("/ctrl-1")
 public class TittiController1 {
