@@ -10,7 +10,6 @@ buildscript {
 		springBootGradlePluginVersion = '2.2.5.RELEASE'
 		springFrameworkVersion = '5.2.5.RELEASE'
 		springSecurityVersion = '5.3.0.RELEASE'
-		springOauthVersion = '2.2.5.RELEASE'
 		thymeLeafVersion = '3.0.11.RELEASE'
 		snakeYamlVersion = '1.26'
 		dockerGradlePluginVersion = '0.22.2'
