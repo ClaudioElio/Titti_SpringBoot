@@ -1,4 +1,4 @@
-FROM openjdk:14-jdk-alpine
+FROM openjdk:14.0.1-jdk-slim-buster
 
 LABEL maintainer="Claudj"
 
