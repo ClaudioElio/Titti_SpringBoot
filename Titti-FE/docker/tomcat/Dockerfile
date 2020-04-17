@@ -1,4 +1,4 @@
-FROM tomcat:9.0.26-jdk13-openjdk-oracle
+FROM 9.0.34-jdk14-openjdk-slim-buster
 
 LABEL maintainer="Claudj"
 
