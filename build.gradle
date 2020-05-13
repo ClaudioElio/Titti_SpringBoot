@@ -50,8 +50,8 @@ subprojects {
 	compileJava {
 		options.deprecation = true
 	
-		sourceCompatibility = 11
-		targetCompatibility = 11
+		sourceCompatibility = 8 // 11
+		targetCompatibility = 8 // 11
 
 //	    modularity.inferModulePath = true
 
