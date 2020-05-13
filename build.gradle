@@ -15,13 +15,12 @@ buildscript {
 		dockerGradlePluginVersion = '0.22.2'
 		googleGsonVersion = '2.8.5'
 		validationApiVersion = '2.0.1.Final'
-//		jettyServerVersion = '9.4.27.v20200227'
+		jettyServerVersion = '9.4.27.v20200227'
 	}
 
 	repositories {
 		mavenLocal()
 		mavenCentral()
-//		maven { url "https://repo.spring.io/release" }
 		maven { url "https://plugins.gradle.org/m2/" }
 	}
 
@@ -34,6 +33,12 @@ buildscript {
 
 apply from: 'setJVMArgs.gradle'
 
+//plugins.withType(JavaPlugin).configureEach {
+//    java {
+//        modularity.inferModulePath = true
+//    }
+//}
+
 subprojects {
 
 	apply plugin: 'java'
@@ -45,8 +50,10 @@ subprojects {
 	compileJava {
 		options.deprecation = true
 	
-		sourceCompatibility = 8		// 11
-		targetCompatibility = 8		// 11
+		sourceCompatibility = 11
+		targetCompatibility = 11
+
+	    modularity.inferModulePath = true
 
 		inputs.property("moduleName", moduleName)
 		doFirst {
@@ -87,7 +94,7 @@ subprojects {
 	
 
 	wrapper {
-		gradleVersion = '6.2.2'
+		gradleVersion = '6.4'
 	}
 
 }

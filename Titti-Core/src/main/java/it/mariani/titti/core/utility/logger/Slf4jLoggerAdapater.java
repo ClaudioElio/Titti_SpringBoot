@@ -1,4 +1,4 @@
-package it.mariani.titti.utility.logger;
+package it.mariani.titti.core.utility.logger;
 import org.slf4j.LoggerFactory;
 
 public class Slf4jLoggerAdapater implements Logger {

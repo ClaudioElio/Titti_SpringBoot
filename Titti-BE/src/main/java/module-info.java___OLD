@@ -1,0 +1,15 @@
+open module titti.springboot {
+
+//    requires java.instrument;
+//    requires java.sql;
+    requires spring.webmvc;
+
+//    requires spring.beans;
+//    requires spring.boot;
+//    requires spring.boot.autoconfigure;
+//    requires spring.context;
+//    requires spring.core;
+//    requires slf4j.api;
+//    requires jdk.unsupported;
+    requires spring.security.oauth2.autoconfigure;
+}

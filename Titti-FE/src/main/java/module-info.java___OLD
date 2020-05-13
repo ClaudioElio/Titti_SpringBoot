@@ -1,15 +1,23 @@
 open module titti.springboot {
+	requires java.base;
+	requires spring.context;
+	requires spring.web;
+	requires spring.webmvc;
+	requires spring.boot;
+	requires spring.boot.autoconfigure;
+	requires jdk.compiler;
+	requires java.validation;
+	requires org.bouncycastle.provider;
+	requires jdk.jfr;
+//	requires spring.cloud.commons;
+//	requires spring.boot;
 
 //    requires java.instrument;
 //    requires java.sql;
-    requires spring.webmvc;
 
 //    requires spring.beans;
-//    requires spring.boot;
-//    requires spring.boot.autoconfigure;
-//    requires spring.context;
 //    requires spring.core;
 //    requires slf4j.api;
 //    requires jdk.unsupported;
-    requires spring.security.oauth2.autoconfigure;
+//    requires spring.security.oauth2.client;
 }

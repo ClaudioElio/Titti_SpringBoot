@@ -1,4 +1,4 @@
-apply plugin: 'war'
+//apply plugin: 'war'
 apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 dependencies {
@@ -12,10 +12,10 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-actuator-autoconfigure:${springBootVersion}")
 	implementation("org.springframework.boot:spring-boot-starter-logging:${springBootVersion}")
 
-//	implementation("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
-//	implementation("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
-	implementation("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
-	implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+	implementation("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+	implementation("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
+//	implementation("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+//	implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 
 	implementation("javax.validation:validation-api:${validationApiVersion}")
 
@@ -37,10 +37,7 @@ dependencies {
 //	implementation("org.springframework.cloud:spring-cloud-starter-web:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-sleuth-zipkin:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}")
-	implementation("org.springframework.cloud:spring-cloud-starter-openfeign:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springEurekaVersion}")
-	implementation("org.springframework.cloud:spring-cloud-starter-netflix-hystrix:${springCloudVersion}")
-	implementation("org.springframework.cloud:spring-cloud-starter-netflix-ribbon:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-sleuth:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-zipkin:${springCloudVersion}")
 
@@ -50,22 +47,14 @@ dependencies {
 
 }
 
-war {
-    archiveBaseName = "titti"
-}
-
-bootWar {
-	archiveFileName = "titti.war"
-	doLast {
-		copy {
-	    	from "./build/libs/"
-			into "./docker/tomcat/"
+bootJar {
+		doLast {
+			println 'CM -- BootJar'
+			copy {
+		    	from "./build/libs/"
+				into "./docker/"
+			}
+	
 		}
-		copy {
-		    from "./src/main/resources/static/"
-	    	into "./docker/http/htdocs"
-	    }
 
-	}
 }
-

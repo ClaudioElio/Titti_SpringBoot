@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ${springboot.app.name:titti-springboot}
+  thymeleaf:
+    cache: false
+  messages:
+    basename: messages/messages
+    cache-duration: -1
+    encoding: UTF-8
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  security:
+    oauth2:
+      client:
+        registration:   
+          google:   
+            client-id: ${app_clientId}
+            client-secret: ${app_clientSecret}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${registry_host:localhost}:${registry_port:8761}/eureka
+    healthcheck:
+      enabled: true

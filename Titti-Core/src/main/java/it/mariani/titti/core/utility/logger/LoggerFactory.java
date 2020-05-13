@@ -1,4 +1,4 @@
-package it.mariani.titti.utility.logger;
+package it.mariani.titti.core.utility.logger;
 
 public class LoggerFactory {
 

@@ -1,2 +1,2 @@
 rootProject.name = 'Titti_SpringBoot'
-include ':Eureka-ServiceRegistry', ':Titti-FE'
+include ':Titti-Core', ':Eureka-ServiceRegistry', ':Titti-FE', ':Titti-BE'
