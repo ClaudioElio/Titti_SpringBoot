@@ -1,4 +1,4 @@
-package it.mariani.titti.fe.controller;
+package it.mariani.titti.core.model;
 
 public class Greeting {
 
