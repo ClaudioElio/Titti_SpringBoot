@@ -1,4 +1,4 @@
-package it.mariani.titti.controller;
+package it.mariani.titti.be.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
