@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"it.mariani.titti.controller"})
+@SpringBootApplication(scanBasePackages = {"it.mariani.titti.be.controller"})
 public class TittiApplication extends SpringBootServletInitializer {
 
   public static void run(String[] args) {

@@ -19,12 +19,12 @@ dependencies {
 
 	implementation("javax.validation:validation-api:${validationApiVersion}")
 
-	implementation("org.springframework.security:spring-security-config:${springSecurityVersion}")
-	implementation("org.springframework.security:spring-security-oauth2-core:${springSecurityVersion}")
-	implementation("org.springframework.security:spring-security-oauth2-client:${springSecurityVersion}")
-	implementation("org.springframework.security:spring-security-oauth2-jose:${springSecurityVersion}")
+//	implementation("org.springframework.security:spring-security-config:${springSecurityVersion}")
+//	implementation("org.springframework.security:spring-security-oauth2-core:${springSecurityVersion}")
+//	implementation("org.springframework.security:spring-security-oauth2-client:${springSecurityVersion}")
+//	implementation("org.springframework.security:spring-security-oauth2-jose:${springSecurityVersion}")
 
-	implementation("org.thymeleaf:thymeleaf-spring5:${thymeLeafVersion}")
+//	implementation("org.thymeleaf:thymeleaf-spring5:${thymeLeafVersion}")
 	implementation("org.yaml:snakeyaml:${snakeYamlVersion}")
 
 	implementation("com.netflix.eureka:eureka-client:1.9.12")

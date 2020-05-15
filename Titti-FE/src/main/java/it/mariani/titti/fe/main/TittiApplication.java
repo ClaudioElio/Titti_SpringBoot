@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableDiscoveryClient
 @EnableFeignClients
-@SpringBootApplication(scanBasePackages = {"it.mariani.titti.controller"})
+@SpringBootApplication(scanBasePackages = {"it.mariani.titti.fe.controller"})
 public class TittiApplication extends SpringBootServletInitializer {
 
   public static void run(String[] args) {
