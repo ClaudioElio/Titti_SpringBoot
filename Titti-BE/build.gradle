@@ -15,7 +15,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
 	implementation("org.eclipse.jetty:jetty-server:${jettyServerVersion}")
 //	implementation("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
-//	implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+	implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 
 	implementation("javax.validation:validation-api:${validationApiVersion}")
 

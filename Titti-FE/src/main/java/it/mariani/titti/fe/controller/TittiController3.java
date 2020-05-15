@@ -1,5 +1,6 @@
 package it.mariani.titti.fe.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,11 +20,16 @@ public class TittiController3 {
 
 	private static final RestTemplate restTemplate = new RestTemplateBuilder().build();
 
+	@Value("${TITTIBE_HOST}")
+	private String hello3Host;
+	
     @RequestMapping(value = "/hello-3")
     public @ResponseBody Greeting sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name,
                                            @RequestParam(value = "number", required = false, defaultValue = "-1") String num) {
- 
-    	Greeting greeting = restTemplate.getForObject("http://titti-be:8001/hello-3", Greeting.class);
+
+    	logger.info(hello3Host);
+
+    	Greeting greeting = restTemplate.getForObject(hello3Host + "/hello-3", Greeting.class);
 		logger.info(greeting.toString());
     	return greeting;
 
