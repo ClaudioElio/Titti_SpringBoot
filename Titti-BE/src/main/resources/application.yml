@@ -20,6 +20,6 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${REGISTRY_URL}/eureka
+      defaultZone: ${REGISTRY_URL}/eureka
     healthcheck:
       enabled: true

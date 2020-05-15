@@ -7,12 +7,12 @@ server:
 
 eureka:
   instance:
-    hostname: ${springboot.app.name:eureka-serviceregistry}
+    hostname: localhost
   client:
-    registerWithEureka: true
+    registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${registry.host:localhost}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname:localhost}:${server.port}/eureka/
 
 logging:
   level:
