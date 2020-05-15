@@ -29,7 +29,7 @@ public class TittiController3 {
 
     	logger.info(hello3Host);
 
-    	Greeting greeting = restTemplate.getForObject(hello3Host + "/hello-3", Greeting.class);
+    	Greeting greeting = restTemplate.getForObject(hello3Host + "/ctrl-3/hello-3", Greeting.class);
 		logger.info(greeting.toString());
     	return greeting;
 
