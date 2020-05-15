@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ${springboot.app.name:titti-springboot}
+    name: ${springboot.app.name:titti-FE}
   thymeleaf:
     cache: false
   messages:
@@ -27,6 +27,6 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${registry_host:localhost}:${registry_port:8761}/eureka
+      defaultZone: http://${REGISTRY_URL}/eureka
     healthcheck:
       enabled: true

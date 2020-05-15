@@ -20,16 +20,16 @@ public class TittiController3 {
 
 	private static final RestTemplate restTemplate = new RestTemplateBuilder().build();
 
-	@Value("${TITTIBE_HOST}")
-	private String hello3Host;
+	@Value("${TITTIBE_URL}")
+	private String tittiBE_URL;
 	
     @RequestMapping(value = "/hello-3")
     public @ResponseBody Greeting sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name,
                                            @RequestParam(value = "number", required = false, defaultValue = "-1") String num) {
 
-    	logger.info(hello3Host);
+    	logger.info(tittiBE_URL);
 
-    	Greeting greeting = restTemplate.getForObject(hello3Host + "/ctrl-3/hello-3", Greeting.class);
+    	Greeting greeting = restTemplate.getForObject(tittiBE_URL + "/ctrl-3/hello-3", Greeting.class);
 		logger.info(greeting.toString());
     	return greeting;
 
