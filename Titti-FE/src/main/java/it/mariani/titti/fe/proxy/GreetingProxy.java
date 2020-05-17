@@ -1,4 +1,4 @@
-package it.mariani.titti.fe.controller.proxy;
+package it.mariani.titti.fe.proxy;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

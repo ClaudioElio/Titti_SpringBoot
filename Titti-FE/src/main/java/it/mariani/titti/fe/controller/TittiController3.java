@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import it.mariani.titti.core.model.Greeting;
 import it.mariani.titti.core.utility.logger.Logger;
 import it.mariani.titti.core.utility.logger.LoggerFactory;
-import it.mariani.titti.fe.controller.proxy.GreetingProxy;
+import it.mariani.titti.fe.proxy.GreetingProxy;
 
 @RestController
 @RequestMapping("/ctrl-3")
