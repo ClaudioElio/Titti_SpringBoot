@@ -30,3 +30,9 @@ eureka:
       defaultZone: http://${REGISTRY_URL}/eureka
     healthcheck:
       enabled: true
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
