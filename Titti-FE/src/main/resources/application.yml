@@ -30,6 +30,8 @@ eureka:
       defaultZone: http://${REGISTRY_URL}/eureka
     healthcheck:
       enabled: true
+  instance:
+    preferIpAddress: true
 
 feign:
   client:
