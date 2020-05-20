@@ -32,12 +32,12 @@ public class TittiController3 {
     public @ResponseBody Greeting sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name,
                                            @RequestParam(value = "number", required = false, defaultValue = "-1") String num) {
 
-    	logger.info(tittiBE_URL);
+    	logger.info("tittiBE_URL=" + tittiBE_URL);
 
 //    	String completeUrl = String.format("%s/ctrl-3/hello-3?name=%s&number=%s", tittiBE_URL, name, num);
 //    	Greeting greeting = restTemplate.getForObject(completeUrl, Greeting.class);
     	Greeting greeting = greetingProxy.getGreeting();
-    	logger.info(greeting.toString());
+    	logger.info("greeting.toString()=" + greeting.toString());
     	return greeting;
 
     }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.mariani.titti.core.model.Greeting;
 
-@FeignClient("titti-BE")
+@FeignClient(name="titti-BE")
 public interface GreetingProxy {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/ctrl-3/hello-3")
