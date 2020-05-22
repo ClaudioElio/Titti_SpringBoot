@@ -5,7 +5,6 @@ import it.mariani.titti.core.utility.logger.LoggerFactory;
 import java.security.Principal;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import it.mariani.titti.core.model.Greeting;
 
 @RestController
 @RequestMapping("/ctrl-user")

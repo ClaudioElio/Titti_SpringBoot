@@ -4,7 +4,7 @@ version '1.0-SNAPSHOT'
 buildscript {
 
 	ext {
-		springBootVersion = '2.2.7.RELEASE'
+		springBootVersion = '2.3.0.RELEASE'
 		springCloudVersion = '2.2.2.RELEASE'
 		springEurekaVersion = '2.2.2.RELEASE'
 		springBootGradlePluginVersion = '2.2.5.RELEASE'
