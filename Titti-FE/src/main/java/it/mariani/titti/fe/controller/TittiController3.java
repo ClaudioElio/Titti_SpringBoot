@@ -36,7 +36,7 @@ public class TittiController3 {
 
 //    	String completeUrl = String.format("%s/ctrl-3/hello-3?name=%s&number=%s", tittiBE_URL, name, num);
 //    	Greeting greeting = restTemplate.getForObject(completeUrl, Greeting.class);
-    	Greeting greeting = greetingProxy.getGreeting();
+    	Greeting greeting = greetingProxy.getGreeting(name, num);
     	logger.info("greeting.toString()=" + greeting.toString());
     	return greeting;
 
