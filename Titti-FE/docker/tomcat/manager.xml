@@ -1,4 +1,4 @@
-<Context  path="/manager" privileged="true" antiResourceLocking="false">
+<Context path="/manager" privileged="true" antiResourceLocking="false">
 	<Valve className="org.apache.catalina.valves.RemoteAddrValve"
 		allow="^.*$" />
 </Context>
