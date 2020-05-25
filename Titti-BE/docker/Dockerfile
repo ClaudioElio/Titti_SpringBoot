@@ -2,7 +2,7 @@ FROM openjdk:14.0.1-jdk-slim-buster
 
 LABEL maintainer="Claudj"
 
-VOLUME /tmp
+#VOLUME /tmp
 
 # Add Spring Boot app.jar to Container
 ADD "Titti-BE.jar" app.jar
