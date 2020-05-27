@@ -27,11 +27,11 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${REGISTRY_URL}/eureka
+      defaultZone: ${REGISTRY_URL}/eureka
     healthcheck:
       enabled: true
   instance:
-    preferIpAddress: false
+#    preferIpAddress: false
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}

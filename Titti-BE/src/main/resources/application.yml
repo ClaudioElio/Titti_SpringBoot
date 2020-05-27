@@ -18,12 +18,14 @@ management:
 
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: ${REGISTRY_URL}/eureka
     healthcheck:
       enabled: true
   instance:
-    preferIpAddress: true
+#    preferIpAddress: false
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}

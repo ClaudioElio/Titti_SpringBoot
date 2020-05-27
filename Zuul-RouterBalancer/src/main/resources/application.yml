@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ${springboot.app.name:zuul-router-balancer}
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${REGISTRY_URL}/eureka
+    healthcheck:
+      enabled: true
+  instance:
+#    preferIpAddress: false
+    leaseRenewalIntervalInSeconds: 10
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: INFO
+        discovery: OFF
