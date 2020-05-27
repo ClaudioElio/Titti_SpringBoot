@@ -5,7 +5,7 @@ LABEL maintainer="Claudj"
 # VOLUME /tmp
 
 # Add Spring Boot app.jar to Container
-ADD "Eureka-ServiceRegistry.jar" app.jar
+ADD "Zuul-RouterBalancer.jar" app.jar
 
 ENV JAVA_OPTS=""
 
