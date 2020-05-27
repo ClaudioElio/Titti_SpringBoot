@@ -2,9 +2,9 @@ apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 dependencies {
 
-		implementation("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+//		implementation("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
 		implementation("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
-		implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springEurekaVersion}")
+		implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}")
 		implementation("com.sun.xml.bind:jaxb-core:2.3.0.1")
 		implementation("com.sun.xml.bind:jaxb-impl:2.3.3-b02")
 		implementation("com.google.code.gson:gson:${googleGsonVersion}")

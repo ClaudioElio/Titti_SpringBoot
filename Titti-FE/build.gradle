@@ -32,13 +32,10 @@ dependencies {
 
 	implementation("io.micrometer:micrometer-core:1.2.1")
 
-//	implementation("org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}")
-//	implementation("org.springframework.cloud:spring-cloud-netflix-eureka-client:${springCloudVersion}")
-//	implementation("org.springframework.cloud:spring-cloud-starter-web:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-sleuth-zipkin:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-config:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign:${springCloudVersion}")
-	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springEurekaVersion}")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-hystrix:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-ribbon:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-sleuth:${springCloudVersion}")
