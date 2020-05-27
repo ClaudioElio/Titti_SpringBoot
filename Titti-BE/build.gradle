@@ -47,6 +47,15 @@ dependencies {
 
 }
 
+compileJava {
+
+//	sourceCompatibility = 11
+//	targetCompatibility = 11
+
+	modularity.inferModulePath = true
+
+}
+
 bootJar {
 		doLast {
 			println 'CM -- BootJar'
