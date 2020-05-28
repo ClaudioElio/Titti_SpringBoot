@@ -23,3 +23,10 @@ logging:
       netflix:
         eureka: INFO
         discovery: OFF
+    org:
+      springframework:
+        cloud:
+          netflix: trace
+zuul:
+  debug:
+    request: true
