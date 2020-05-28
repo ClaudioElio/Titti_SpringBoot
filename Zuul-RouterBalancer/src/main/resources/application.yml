@@ -3,7 +3,7 @@ spring:
     name: ${springboot.app.name:zuul-router-balancer}
 
 server:
-  port: 8081
+  port: 8100
 
 eureka:
   client:
