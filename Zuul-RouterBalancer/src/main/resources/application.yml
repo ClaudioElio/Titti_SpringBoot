@@ -28,8 +28,8 @@ logging:
   level:
     com:
       netflix:
-        eureka: INFO
-        discovery: OFF
+        eureka: DEBUG
+#        discovery: OFF
     org:
       springframework:
         cloud:
