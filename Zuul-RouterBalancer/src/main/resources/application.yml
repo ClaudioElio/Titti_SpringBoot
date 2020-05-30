@@ -1,6 +1,13 @@
 spring:
   application:
     name: ${springboot.app.name:zuul-router-balancer}
+  security:
+    oauth2:
+      client:
+        registration:   
+          google:   
+            client-id: ${app_clientId}
+            client-secret: ${app_clientSecret}
 
 server:
   port: 8100

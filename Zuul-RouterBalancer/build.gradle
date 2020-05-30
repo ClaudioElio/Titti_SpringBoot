@@ -6,6 +6,11 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-zuul:${springCloudVersion}")
 
+	implementation("org.springframework.security:spring-security-config:${springSecurityVersion}")
+	implementation("org.springframework.security:spring-security-oauth2-core:${springSecurityVersion}")
+	implementation("org.springframework.security:spring-security-oauth2-client:${springSecurityVersion}")
+	implementation("org.springframework.security:spring-security-oauth2-jose:${springSecurityVersion}")
+
 	implementation("com.google.code.gson:gson:${googleGsonVersion}")
 	implementation("com.sun.xml.bind:jaxb-core:2.3.0.1")
 	implementation("com.sun.xml.bind:jaxb-impl:2.3.3-b02")
