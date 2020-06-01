@@ -8,10 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/ctrl-1")
 public class TittiController1 {
 
-    public TittiController1() {
-
-    }
-
     @RequestMapping("/hello-1")
     public ModelAndView hello() {
         return new ModelAndView("layout-1");

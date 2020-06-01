@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.mariani.titti.core.model.Greeting;
 import it.mariani.titti.core.utility.logger.Logger;
 import it.mariani.titti.core.utility.logger.LoggerFactory;
-import it.mariani.titti.fe.proxy.GreetingProxy;
+import it.mariani.titti.fe.proxy.TittiBEProxy;
 
 @RestController
 @RequestMapping("/ctrl-3")
@@ -21,7 +21,7 @@ public class TittiController3 {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Autowired
-	GreetingProxy greetingProxy;
+	TittiBEProxy greetingProxy;
 	
     @RequestMapping(value = "/hello-3")
     public @ResponseBody Greeting sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name,

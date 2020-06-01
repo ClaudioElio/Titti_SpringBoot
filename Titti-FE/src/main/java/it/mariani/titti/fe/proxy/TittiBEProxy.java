@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.mariani.titti.core.model.Greeting;
 
 @FeignClient(name="titti-BE")
-public interface GreetingProxy {
+public interface TittiBEProxy {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/ctrl-3/hello-3")
 	Greeting getGreeting(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name,
