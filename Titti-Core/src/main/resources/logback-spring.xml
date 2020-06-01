@@ -2,7 +2,7 @@
 <!DOCTYPE xml>
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
-	<springProperty scope="context" name="appName" source="springboot.app.name"/>
+	<springProperty scope="context" name="springAppName" source="springboot.app.name"/>
 
 	<logger name="org.springframework.cloud.sleuth" level="TRACE" />
 	<statusListener
@@ -20,7 +20,7 @@
 				<pattern>
 					<pattern>
 						{
-						"serviceName": "${appName:myService}"
+						"serviceName": "${springAppName:myService}"
 						}
 					</pattern>
 				</pattern>

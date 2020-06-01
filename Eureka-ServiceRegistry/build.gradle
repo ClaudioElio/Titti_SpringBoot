@@ -12,6 +12,12 @@ dependencies {
 
 }
 
+compileJava {
+
+	modularity.inferModulePath = true
+
+}
+
 bootJar {
 		doLast {
 			println 'CM -- BootJar'
