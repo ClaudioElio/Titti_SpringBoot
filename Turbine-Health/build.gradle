@@ -5,6 +5,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudVersion}")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-turbine:${springCloudVersion}")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-hystrix:${springCloudVersion}")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard:${springCloudVersion}")
 
 
 	implementation("com.google.code.gson:gson:${googleGsonVersion}")
