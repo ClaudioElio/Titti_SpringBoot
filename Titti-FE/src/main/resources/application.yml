@@ -17,6 +17,8 @@ spring:
           google:   
             client-id: ${app_clientId}
             client-secret: ${app_clientSecret}
+server:
+  port: 8080
 
 management:
   endpoints:
