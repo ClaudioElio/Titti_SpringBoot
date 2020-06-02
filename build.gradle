@@ -5,8 +5,7 @@ buildscript {
 
 	ext {
 		springBootVersion = '2.3.0.RELEASE'
-		springCloudVersion = '2.2.2.RELEASE'
-//		springEurekaVersion = '2.2.2.RELEASE'
+		springCloudVersion = '2.2.3.RELEASE'
 		springBootGradlePluginVersion = '2.2.5.RELEASE'
 		springFrameworkVersion = '5.2.6.RELEASE'
 		springSecurityVersion = '5.3.2.RELEASE'
@@ -54,12 +53,7 @@ subprojects {
 		targetCompatibility = 11
 
 		inputs.property("moduleName", moduleName)
-		doFirst {
-//			options.compilerArgs = [
-//				'--module-path', classpath.asPath,
-//			]
-//        	classpath = files()  
-    	}
+
 		doLast {
 			println 'CM -- compileJava'
 		}
@@ -67,7 +61,6 @@ subprojects {
 
 	checkstyle {
 		toolVersion '8.30'
-//		configFile file("$project.rootDir/config/checkstyle/checkstyle.xml")
 		configDirectory.set file("$project.rootDir/config/checkstyle")
 		reportsDir = file("$project.buildDir/reports/checkstyle")
 	}
@@ -97,17 +90,17 @@ subprojects {
 
 }
 
-	task superBuild(dependsOn: ':bootWar') {
-		group = 'Build'
-		doLast {
-			println 'CM -- BootWar'
-			copy {
-			    from "./src/main/resources/static/"
-	    		into "./config/docker/http/htdocs"
-	    	}
-	
-		}
+task superBuild(dependsOn: ':bootWar') {
+	group = 'Build'
+	doLast {
+		println 'CM -- BootWar'
+		copy {
+		    from "./src/main/resources/static/"
+    		into "./config/docker/http/htdocs"
+    	}
+
 	}
+}
 
 allprojects {
 }

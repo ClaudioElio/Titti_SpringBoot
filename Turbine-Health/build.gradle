@@ -17,13 +17,11 @@ dependencies {
 }
 
 bootJar {
-		doLast {
-			println 'CM -- BootJar'
-			copy {
-		    	from "./build/libs/"
-				into "./docker/"
-			}
-	
+	doLast {
+		println 'CM -- BootJar'
+		copy {
+	    	from "./build/libs/"
+			into "./docker/"
 		}
-
+	}
 }
