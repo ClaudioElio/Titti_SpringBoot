@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Title</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="apple-touch-icon" sizes="180x180"
-	href="FavIcon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32"
-	href="FavIcon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16"
-	href="FavIcon/favicon-16x16.png">
-<link rel="manifest" href="FavIcon/site.webmanifest">
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-<body>
-	<div class="container">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<a class="brand" href="http://spring.io"> Spring </a>
-				<ul class="nav">
-					<li><a href="/"> Home </a></li>
-				</ul>
+	<head>
+		<title>Title</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="apple-touch-icon" sizes="180x180"
+			href="FavIcon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32"
+			href="FavIcon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16"
+			href="FavIcon/favicon-16x16.png">
+		<link rel="manifest" href="FavIcon/site.webmanifest">
+		<!--script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="http://spring.io"> Spring </a>
+					<ul class="nav">
+						<li><a href="/"> Home </a></li>
+					</ul>
+				</div>
 			</div>
+			<div class="container" id="app">
+				<h1>{{ main_header }}</h1>
+				<div>{{ main_intro }}</div>
+				<ul class="nav" v-for="link in links">
+					<li><a :href=link.url> {{ link.text }} </a></li>
+				</ul>
+									<div class="md-layout-item md-size-25">
+										<md-button class="md-primary md-raised" @click="service_load()">Load instances</md-button>
+									</div>
+
+				</div>
 		</div>
-		<div class="container" id="app">
-			<h1>{{ main_header }}</h1>
-			<div>{{ main_intro }}</div>
-			<ul class="nav" v-for="link in links">
-				<li><a :href=link.url> {{ link.text }} </a></li>
-			</ul>
-		</div>
-	</div>
-	<script src="/js/app.js"></script>
-</body>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="https://unpkg.com/vue-material"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="/js/app.js"></script>
+	</body>
 </html>
