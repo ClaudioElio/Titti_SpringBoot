@@ -4,14 +4,14 @@ version '1.0-SNAPSHOT'
 buildscript {
 
 	ext {
-		springBootVersion = '2.3.0.RELEASE'
+		springBootVersion = '2.3.3.RELEASE'
 		springCloudVersion = '2.2.3.RELEASE'
-		springBootGradlePluginVersion = '2.2.5.RELEASE'
-		springFrameworkVersion = '5.2.6.RELEASE'
+		springBootGradlePluginVersion = '2.4.1'
+		springFrameworkVersion = '5.3.2'
 		springSecurityVersion = '5.3.2.RELEASE'
 		thymeLeafVersion = '3.0.11.RELEASE'
 		snakeYamlVersion = '1.26'
-		dockerGradlePluginVersion = '0.22.2'
+		dockerGradlePluginVersion = '0.25.0'
 		googleGsonVersion = '2.8.5'
 		validationApiVersion = '2.0.1.Final'
 		jettyServerVersion = '9.4.27.v20200227'
@@ -25,7 +25,7 @@ buildscript {
 
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
-		classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:${dockerGradlePluginVersion}")
+		classpath("com.palantir.gradle.docker:gradle-docker:${dockerGradlePluginVersion}")
 	}
 
 }
@@ -79,8 +79,8 @@ subprojects {
 		mavenLocal()
 		mavenCentral()
 		maven { url "https://repo.spring.io/release" }
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/libs-snapshot" }
+//		maven { url "https://repo.spring.io/snapshot" }
+//		maven { url "https://repo.spring.io/libs-snapshot" }
 	}
 	
 
